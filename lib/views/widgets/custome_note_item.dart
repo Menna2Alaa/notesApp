@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class NotesItem extends StatelessWidget {
-  const NotesItem({super.key});
+  const NotesItem({super.key, required this.note});
+
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +32,14 @@ class NotesItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: const Text(
-                "Flutter Tips",
-                style: TextStyle(color: Colors.black, fontSize: 26),
+              title: Text(
+                note.title,
+                style: const TextStyle(color: Colors.black, fontSize: 26),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
-                  "Build your career",
+                  note.subTitle,
                   style: TextStyle(
                     color: Colors.black.withValues(alpha: 0.4),
                     fontSize: 18,
@@ -54,7 +58,7 @@ class NotesItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 24),
               child: Text(
-                "June 12 , 2025",
+                note.date,
                 style: TextStyle(
                   color: Colors.black.withValues(alpha: 0.4),
                   fontSize: 16,
@@ -67,3 +71,12 @@ class NotesItem extends StatelessWidget {
     );
   }
 }
+
+// String formatDate(String noteDate) {
+//   try {
+//     final date = DateTime.parse(noteDate);
+//     return DateFormat('dd MMM yyyy').format(date);
+//   } catch (e) {
+//     return noteDate;
+//   }
+// }
