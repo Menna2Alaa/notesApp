@@ -4,8 +4,8 @@ import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/note_form.dart';
 
-class AddNoteBottom extends StatelessWidget {
-  const AddNoteBottom({super.key});
+class AddNoteBottomSheet extends StatelessWidget {
+  const AddNoteBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {

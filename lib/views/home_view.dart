@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
-import 'package:notes_app/views/widgets/add_note_bottom.dart';
+import 'package:notes_app/views/widgets/add_note_bottom_sheet.dart';
 import 'package:notes_app/views/widgets/notes_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget {
             ),
             context: context,
             builder: (context) {
-              return const AddNoteBottom();
+              return const AddNoteBottomSheet();
             },
           );
         },
